@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 · 信息整理与索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(145deg, #fbe9d7 0%, #f7d9b3 40%, #efcba2 100%);
+            min-height: 100vh;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #2f2a24;
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 840px;
+            width: 100%;
+        }
+
+        /* 白色内容卡片 */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 2.6rem;
+            padding: 2.4rem 2.8rem;
+            box-shadow: 0 12px 32px rgba(140, 80, 30, 0.10);
+            margin-bottom: 2.4rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 16px 40px rgba(120, 65, 20, 0.12);
+        }
+
+        /* Hero 区 */
+        .hero {
+            text-align: center;
+            padding: 3.2rem 2rem 2.8rem;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 380;
+            letter-spacing: -0.015em;
+            color: #3d2d1f;
+            margin-bottom: 0.6rem;
+            background: linear-gradient(135deg, #7e5c3a, #b7825a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            color: #6b5543;
+            background: rgba(255, 235, 215, 0.6);
+            display: inline-block;
+            padding: 0.3rem 1.8rem;
+            border-radius: 40px;
+            margin-top: 0.7rem;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(2px);
+        }
+
+        /* 圆角按钮感链接 */
+        a {
+            color: #7a5a3e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: all 0.18s ease;
+        }
+
+        a.rounded-link {
+            display: inline-block;
+            border: 1px solid #c9ad8c;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            background: rgba(252, 242, 228, 0.6);
+            color: #503f30;
+            font-weight: 480;
+            border-bottom: 1px solid #c9ad8c;
+        }
+
+        a.rounded-link:hover {
+            background: #e4cdb3;
+            border-color: #a07e5e;
+            color: #2f241b;
+            transform: scale(1.01);
+        }
+
+        a.natural-link {
+            border-bottom: 1px dashed #b5987a;
+        }
+
+        a.natural-link:hover {
+            border-bottom-color: #7a5a3e;
+            color: #3f2e1e;
+        }
+
+        /* 标题 */
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 380;
+            letter-spacing: -0.01em;
+            color: #4a3828;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #dbb594;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 480;
+            color: #4f3c2b;
+            margin: 1.6rem 0 0.6rem;
+        }
+
+        /* 特点网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 1.8rem;
+            margin: 1rem 0 0.2rem;
+        }
+
+        .feature-item {
+            background: rgba(247, 234, 219, 0.3);
+            border-radius: 1.4rem;
+            padding: 1.2rem 1.2rem 1.2rem 1.6rem;
+            border-left: 5px solid #dbb594;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 540;
+            color: #3d2b1b;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4f3f32;
+            margin: 0;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid #e6d6c4;
+            padding-bottom: 1rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #3f3023;
+            font-size: 1.05rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            color: #5b4a3b;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin: 2.4rem 0 1.2rem;
+            font-size: 0.9rem;
+            color: #625242;
+            border-top: 1px solid #dbcabc;
+            padding-top: 2rem;
+        }
+
+        .footer-note a {
+            color: #5d4231;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .card {
+                padding: 1.6rem 1.2rem;
+                border-radius: 2rem;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- Hero 区 -->
+    <div class="card hero">
+        <h1>整理，然后索引</h1>
+        <div class="sub">一本关于信息脉络的手册 · <a href="https://page--leisu.com" class="rounded-link">雷速</a></div>
+        <p style="margin-top: 1.2rem; font-size: 1.05rem; max-width: 520px; margin-left: auto; margin-right: auto; color: #4b3929;">
+        把散落的文档、笔记、片段连起来——不是收藏，而是重新找到它们的方式。
+        </p>
+    </div>
+
+    <!-- 介绍/切入角度：资料整理与索引 -->
+    <div class="card">
+        <h2>从积累到检索</h2>
+        <p>资料从四面八方来：截图的灵感、阅读时的批注、工作文档的某个版本。时间一长，文件夹里躺着的文件变成沉默的碎片。<a href="https://page--leisu.com" class="natural-link">雷速</a> 提供的思路是，用轻量的索引结构把这些内容重新组织，让每一份材料都回到一个可被描述的上下文里。</p>
+        <p style="margin-top: 1rem;">你不需要记住全部细节，只需要知道它大概在哪个脉络里——标题、标签、一段描述，就够了。真正的信息整理，是给每一条记录一个能再次找到它的线索。</p>
+    </div>
+
+    <!-- 优势区：特点卡片 -->
+    <div class="card">
+        <h2>索引的几种姿势</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>◈ 段落式描述</strong>
+                <p>用自然语言标记内容，不加分号清单，更像在卡片背面写一段话。</p>
+            </div>
+            <div class="feature-item">
+                <strong>◈ 手动但克制</strong>
+                <p>不搞全自动提取，保持对资料的控制感——你决定哪些值得被索引。</p>
+            </div>
+            <div class="feature-item">
+                <strong>◈ 上下文优先</strong>
+                <p>每条记录都带着来源、日期、关联笔记，而不是孤立的标题堆砌。</p>
+            </div>
+            <div class="feature-item">
+                <strong>◈ 温和的穿梭</strong>
+                <p>通过链接在项目、主题、片段之间移动，像翻阅一本自己写的参考书。</p>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #5e4a38;">这些做法并不新颖，但胜在实在——你能感觉到每一处索引都在帮你节省下一次查找的时间。</p>
+    </div>
+
+    <!-- 说明区：场景与提示 -->
+    <div class="card">
+        <h2>可以怎么用</h2>
+        <p>如果你也经常面对一堆笔记反复整理、分类、又忘记分类逻辑，那 <a href="https://page--leisu.com" class="natural-link">雷速</a> 里面的一些方式或许能让你停下来想一想：真正需要的是不是另一个文件夹，而是一条能描述内容的短路径。</p>
+        <ul style="list-style: none; margin: 1.2rem 0 0.4rem; padding: 0;">
+            <li style="padding: 0.3rem 0;">— 给每篇文档写一句“它关于什么”，而非只贴标签</li>
+            <li style="padding: 0.3rem 0;">— 把相关片段用链接串成一条线索链</li>
+            <li style="padding: 0.3rem 0;">— 定期回看索引记录，像看日记一样知道当时关注什么</li>
+        </ul>
+        <p style="margin-top: 0.8rem;">整理不是一劳永逸的事，但好的索引习惯会让下一次查找变得安静、准确。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+        <h2>FAQ · 摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">这个思路适合什么类型的资料？</div>
+            <div class="faq-a">读书笔记、项目记录、散落的灵感卡片、研究草稿。不太适合纯图片或视频文件——对文字和结构化描述更友好。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">需要特定的软件或平台吗？</div>
+            <div class="faq-a">不依赖特定工具。索引的方式可以放在本地文本、wiki、或者你自己搭建的页面里。<a href="https://page--leisu.com" class="natural-link">雷速</a> 展示的是一套思路，而不是某个封闭系统。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">索引多了会不会变得杂乱？</div>
+            <div class="faq-a">会，所以需要定期修剪。好的索引系统允许你打散重组，而不是越堆越厚。关键是保持每个条目都指向一个有意义的内容片段。</div>
+        </div>
+    </div>
+
+    <!-- 底部链接区 -->
+    <div class="footer-note">
+        <p>资料整理的方式不只一种，<a href="https://page--leisu.com" class="rounded-link">雷速</a> 提供了一种温和的索引视角。</p>
+        <p style="margin-top: 0.6rem; font-size: 0.85rem; color: #776655;">偶尔回看，比一直囤积更有用。</p>
+    </div>
+
+</div>
+</body>
+</html>
