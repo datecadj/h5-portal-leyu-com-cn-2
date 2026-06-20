@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>推币机 · 知识库入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f2;
+      font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+      color: #2c2a26;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .page-wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #fffcf8;
+      padding: 2.5rem 2.2rem;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+    }
+
+    /* 目录感布局：标题组 */
+    .hero {
+      margin-bottom: 2.8rem;
+      border-bottom: 2px solid #ebdfd4;
+      padding-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #3d352d;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero .sub {
+      font-size: 0.95rem;
+      color: #8b7e72;
+      margin-top: 0.1rem;
+    }
+
+    .divider-rule {
+      width: 60px;
+      height: 3px;
+      background: #d6c7b8;
+      margin: 1.2rem 0 0.8rem 0;
+      border-radius: 4px;
+    }
+
+    /* 信息卡片组（说明区） */
+    .info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .card {
+      background: #f7f2ea;
+      padding: 1.6rem 2rem;
+      border-radius: 18px;
+      border-left: 5px solid #cbb7a3;
+      transition: background 0.2s;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #4d4035;
+      margin-bottom: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .card p {
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 提示区（引用块/提示框） */
+    .tip-block {
+      background: #f2ece4;
+      padding: 1.5rem 2rem;
+      border-radius: 18px;
+      margin: 2rem 0 2.5rem 0;
+      border: 1px solid #ddd2c4;
+      box-shadow: inset 0 1px 4px rgba(255,255,255,0.6);
+    }
+
+    .tip-block .tip-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #7f6d5d;
+      background: #e5d9cc;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 0.8rem;
+    }
+
+    .tip-block p {
+      margin-bottom: 0.6rem;
+    }
+
+    .tip-block p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* 相关信息区——faq摘要风格 */
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
+      margin: 1.8rem 0 2.2rem 0;
+    }
+
+    .related-item {
+      background: #fffcf8;
+      border: 1px solid #e6dbd0;
+      border-radius: 20px;
+      padding: 1.2rem 1.5rem;
+      transition: box-shadow 0.15s;
+    }
+
+    .related-item:hover {
+      box-shadow: 0 4px 12px rgba(160, 130, 100, 0.08);
+    }
+
+    .related-item h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #4d4035;
+      margin-bottom: 0.3rem;
+    }
+
+    .related-item p {
+      font-size: 0.92rem;
+      color: #5e5348;
+    }
+
+    /* 链接内嵌样式 */
+    .inline-link {
+      color: #7e6653;
+      text-decoration: underline;
+      text-decoration-color: #d4c0ae;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    .inline-link:hover {
+      color: #3d2f24;
+      text-decoration-color: #9f8773;
+    }
+
+    /* 底部安静 */
+    .footer-note {
+      border-top: 1px solid #ede3d8;
+      margin-top: 2.8rem;
+      padding-top: 1.2rem;
+      font-size: 0.85rem;
+      color: #9e8e7c;
+      text-align: center;
+    }
+
+    /* 响应式 */
+    @media (max-width: 680px) {
+      .page-wrapper {
+        padding: 1.8rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .related-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .card {
+        padding: 1.2rem 1.4rem;
+      }
+      .tip-block {
+        padding: 1.2rem 1.4rem;
+      }
+    }
+
+    @media (max-width: 460px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .page-wrapper {
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- hero 标题区 / 目录感 -->
+  <div class="hero">
+    <h1>推币机 · 知识库</h1>
+    <div class="sub">站点介绍 · 可信说明 · 信息入口</div>
+    <div class="divider-rule"></div>
+  </div>
+
+  <!-- 说明区（介绍+可信） -->
+  <div class="info-section">
+    <div class="card">
+      <h2>关于本站</h2>
+      <p>这是一个围绕<strong>推币机</strong>主题所建立的专题知识库。站内内容涵盖游戏机制、策略思路、文化观察与常见疑问，不涉及任何诱导投注或夸大收益的描述。所有信息均来自公开资料与爱好者社区的经验梳理，旨在提供一份平实、可供参考的阅读材料。</p>
+      <p>如果你对推币机感到好奇，或想了解它背后的原理与演变，从这里开始翻阅会是一段顺畅的体验。</p>
+    </div>
+
+    <div class="card">
+      <h2>可信说明</h2>
+      <p>本站不隶属于任何实体机构，也不代表任何品牌立场。内容编写尽可能克制、准确，但知识本身存在动态变化，建议读者结合多方信息进行判断。推币机作为一种娱乐设备，不同地区的规则、概率与外观可能有所差异，页面中的描述尽量以通用案例为主。</p>
+      <p>当你准备进一步浏览时，可以直接前往 <a href="https://zh-coinpusher.com" class="inline-link">推币机</a> 主页，阅读更完整的文章与分类。</p>
+    </div>
+  </div>
+
+  <!-- 提示区（引用块风格） -->
+  <div class="tip-block">
+    <span class="tip-label">📌 提示</span>
+    <p>推币机的乐趣常常在于视觉与声音的反馈，以及层层推进的物理节奏。如果你打算在现实中体验，建议提前了解场所的规则与兑换方式。线上模拟与线下实体机存在手感差异，请保持适度心态。</p>
+    <p>知识库内的策略分析仅供学习参考，不构成任何「必胜」建议。任何游戏都包含随机成分，请理性看待。</p>
+  </div>
+
+  <!-- 相关信息区（FAQ摘要风格） -->
+  <h2 style="font-weight:400; font-size:1.1rem; color:#3d352d; letter-spacing:1px; margin-bottom:0.6rem;">常见话题摘要</h2>
+  <div class="related-grid">
+    <div class="related-item">
+      <h3>推币机的基本规则</h3>
+      <p>投币→推板往复→硬币跌落触发奖励。不同机型在推杆速度、奖励层数上略有区别，但核心逻辑相似。</p>
+    </div>
+    <div class="related-item">
+      <h3>物理机制与随机性</h3>
+      <p>硬币堆叠角度、推杆力度、震动频率都会影响结果。多数机器使用随机数芯片控制大奖时机，并非完全物理随机。</p>
+    </div>
+    <div class="related-item">
+      <h3>历史与文化背景</h3>
+      <p>推币机起源于20世纪初的街机厅，早期为纯机械结构，后来逐渐电子化。在亚洲部分地区融合了兑奖与积分玩法。</p>
+    </div>
+    <div class="related-item">
+      <h3>线上模拟 vs 实体</h3>
+      <p>线上版本往往简化了物理碰撞，更适合策略练习；实体机的触感与倾斜角度难以完全复刻，体验各有侧重。</p>
+    </div>
+  </div>
+
+  <!-- 额外的温和句子，自然嵌入链接 -->
+  <p style="margin: 0.5rem 0 0.2rem 0; font-size: 0.95rem; color: #5a4e42;">
+    若想浏览更细致的分类文章，可以前往 <a href="https://zh-coinpusher.com" class="inline-link">推币机</a> 知识库主页，那里整理了十余篇专题内容。
+  </p>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    <span>zh-coinpusher.com · 知识入口页</span><br>
+    <span style="font-size:0.8rem;">内容仅供信息参考，请自行辨别。</span>
+  </div>
+
+</div>
+</body>
+</html>
